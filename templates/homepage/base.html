@@ -1,0 +1,17 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="{% static 'css/call-tiffin.css' %}">
+  <title>Call Tiffin</title>
+</head>
+<body>
+  <nav class="site-nav">
+    <a class="brand" href="{% url 'loggedin' %}"><span class="brand-mark">⌂</span>Call Tiffin</a>
+    <div class="nav-links">{% block navbar %}<a class="optional" href="{% url 'VendorLogin' %}">Partner login</a><a class="button button--ghost" href="{% url 'admin:index' %}">Admin</a>{% endblock %}</div>
+  </nav>
+  {% block content %}{% endblock %}
+  <footer class="footer">Call Tiffin · Honest home-style meals, delivered with care.</footer>
+</body>
+</html>
