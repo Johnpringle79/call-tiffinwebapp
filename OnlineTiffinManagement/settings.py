@@ -28,8 +28,10 @@ DEBUG = os.environ.get('DJANGO_DEBUG', 'True').lower() == 'true'
 
 ALLOWED_HOSTS = os.environ.get(
     'DJANGO_ALLOWED_HOSTS',
-    'localhost,127.0.0.1,.onrender.com',
+    'localhost,127.0.0.1',
 ).split(',')
+if '.onrender.com' not in ALLOWED_HOSTS:
+    ALLOWED_HOSTS.append('.onrender.com')
 
 
 # Application definition
